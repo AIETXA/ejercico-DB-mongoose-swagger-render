@@ -5,7 +5,8 @@ const Task = require("../models/Task.js");
 //CREATE TASK
 router.post("/create", async(req, res) => {
     try {
-        const task = await Task.create({...req.body, completed: false });
+        console.log("req.body recibido:", req.body);
+        const task = await Task.create({...req.body });
         res.status(201).send({ message: "Task successfully created", task });
     } catch (error) {
         console.error(error);
