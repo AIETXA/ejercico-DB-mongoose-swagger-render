@@ -1,20 +1,24 @@
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-const mongoose = require('mongoose');
-const { dbConnection } = require('./config/config');
-const routes = require('./routes');
-app.use(express.json());
-const { MONGO_URI } = require("./config/keys");
+const express = require('express')
 const swaggerUI = require('swagger-ui-express')
 const docs = require('./docs/index')
+const app = express()
+require('dotenv').config()
+console.log('MONGO_URI:', process.env.MONGO_URI);
 
 
+const dbConnection = require('./config/config')
+dbConnection()
+const PORT = 3000;
+const routes = require('./routes/tasks');
 
-app.use('/api-docs', swaggerUI.serve,swaggerUI.setup(docs))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 app.use('/', routes);
 
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(docs))
 
-dbConnection();
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Express está escuchando en el puerto http://localhost:${PORT}`)
+})

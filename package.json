@@ -1,20 +1,27 @@
 {
-    "name": "ejercicio-mongo-solucion",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "dev": "nodemon index.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "dotenv": "16.4.1",
-        "express": "4.21.2",
-        "mongoose": "8.15.0",
-        "swagger-ui-express": "5.0.1"
-    },
-    "devDependencies": {
-        "nodemon": "^3.0.3"
-    }
+  "name": "ejercico-db-mongoose-swagger-render",
+  "version": "1.0.0",
+  "description": "Para este ejercicio se pide documentar la API utilizando swagger y desplegar la misma en render. Debemos utilizar la API de tareas que creamos en la Review 2 de la semana pasada.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIETXA/ejercico-DB-mongoose-swagger-render.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AIETXA/ejercico-DB-mongoose-swagger-render/issues"
+  },
+  "homepage": "https://github.com/AIETXA/ejercico-DB-mongoose-swagger-render#readme",
+  "dependencies": {
+    "dotenv": "16.5.0",
+    "express": "5.1.0",
+    "mongoose": "8.15.1",
+    "swagger-ui-express": "5.0.1"
+  }
 }
