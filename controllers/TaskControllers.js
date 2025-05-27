@@ -58,7 +58,7 @@ const TaskController = {
   },
   async deleteTask (req, res) {
     try {
-      const id = req.params._id
+      const id = req.params.id
       const deletedTask = await Task.findByIdAndDelete(id)
       if (!deletedTask) {
         return res.status(404).json({message: "Task with that id not found"})
